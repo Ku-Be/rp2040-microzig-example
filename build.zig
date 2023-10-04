@@ -6,6 +6,7 @@ pub fn build(b: *std.Build) void {
     const optimize = b.standardOptimizeOption(.{});
 
     const dest = .{ .name = "pico", .target = rp2040.boards.raspberry_pi.pico };
+	// const dest = .{ .name = "pico", .target = rp2040.boards.raspberry_pi.pico_ram_only };
     const firmware = microzig.addFirmware(b, .{
         .name = b.fmt("morse-{s}", .{dest.name}),
         .target = dest.target,
